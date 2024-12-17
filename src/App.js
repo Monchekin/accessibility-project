@@ -1,31 +1,34 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Input from './components/input/Input';
 import './App.css';
 import { validateField, setupFields } from './components/input/Validation';
 
 const App = () => {
-  console.log('App component rendered');
-
   const [errorFields, setErrorFields] = useState(setupFields);
-  const [inputValue, setInputValue] = useState('');
+  const [showErrors, setShowErrors] = useState(false);
+
   const inputRefs = useRef({});
   const delayRef = useRef(null);
   const formRef = useRef(null);
+  const isMouseInteraction = useRef(false); // Flagga för musinteraktion
 
   const focusOnFirstError = () => {
-    console.log('focusOnFirstError triggered');
-    const firstErrorLink = document.querySelector('.error-link');
-    if (firstErrorLink) {
-      console.log('Focusing on first error link:', firstErrorLink);
-      firstErrorLink.setAttribute('tabIndex', '0');
-      firstErrorLink.focus();
-      firstErrorLink.scrollIntoView({ behavior: 'smooth' });
+    if (isMouseInteraction.current) return; // Hoppa över om musen användes
+
+    const errorLinks = document.querySelectorAll('.error-link[tabindex="0"]');
+    if (errorLinks.length > 0) {
+      errorLinks[0].focus();
+      errorLinks[0].scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const handleMouseDown = () => {
+    isMouseInteraction.current = true; // Markera att musen används
+  };
+
+  // Återställer felmeddelanden vid användarinteraktion och uppdaterar errorFields
   const handleChange = (e, name) => {
     const { value } = e.target;
-    console.log(`handleChange: ${name} = ${value}`);
     const error = validateField(value, name);
 
     setErrorFields((prevFields) => ({
@@ -36,6 +39,7 @@ const App = () => {
       },
     }));
 
+    // Fördröjd uppdatering av feedback
     if (delayRef.current) {
       clearTimeout(delayRef.current);
     }
@@ -43,15 +47,15 @@ const App = () => {
     delayRef.current = setTimeout(() => {
       const feedbackSpan = document.getElementById('feedback');
       if (feedbackSpan) {
-        console.log(`Setting aria-label for feedback: ${value}`);
         feedbackSpan.ariaLabel = `Du har skrivit ${value}`;
       }
     }, 1000);
   };
 
   const handleBlur = (e, fieldName) => {
+    isMouseInteraction.current = false; // Återställ när input tappar fokus
+
     const { value } = e.target;
-    console.log(`handleBlur: ${fieldName} = ${value}`);
     const error = validateField(value, fieldName);
 
     setErrorFields((prev) => ({
@@ -61,23 +65,32 @@ const App = () => {
         error,
       },
     }));
+
+    if (!error) {
+      const errorLinks = document.querySelectorAll('.error-link[tabindex="0"]');
+      if (errorLinks.length > 0) {
+        errorLinks[0].focus();
+      }
+    }
   };
 
   const handleSubmit = (e) => {
-    console.log('Submit triggered');
     e.preventDefault();
+    isMouseInteraction.current = false; // Återställ flaggan vid Submit
 
     let newErrors = {};
     let hasErrors = false;
 
+    // Validera alla fält
     Object.keys(errorFields).forEach((field) => {
       const value = errorFields[field].value || '';
       const error = validateField(value, field);
-      console.log(`Validating ${field}: ${error}`);
 
       if (error) {
         hasErrors = true;
         newErrors[field] = { ...errorFields[field], error };
+      } else {
+        newErrors[field] = { ...errorFields[field], error: '' };
       }
     });
 
@@ -87,8 +100,8 @@ const App = () => {
     }));
 
     if (hasErrors) {
-      console.log('Errors found in form');
-      focusOnFirstError();
+      setShowErrors(true);
+      setTimeout(() => focusOnFirstError(), 0);
       return;
     }
 
@@ -98,110 +111,96 @@ const App = () => {
   return (
     <div>
       <form
-        onSubmit={(e) => {
-          console.log('Form onSubmit triggered');
-          handleSubmit(e);
-        }}
+        onSubmit={handleSubmit}
+        onMouseDown={handleMouseDown} // Registrera musinteraktion
         ref={formRef}
       >
-        <fieldset className="error-messages">
-          <legend>Felmeddelanden</legend>
-          {Object.keys(errorFields).map(
-            (field) =>
-              errorFields[field].error && (
-                <div key={field} style={{ color: 'red' }}>
-                  <a
-                    href={`#${field}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      console.log(`Focusing on input ${field}`);
-                      inputRefs.current[field]?.focus();
-                    }}
-                    className="error-link"
-                  >
-                    {errorFields[field].error}
-                  </a>
-                </div>
-              )
-          )}
-        </fieldset>
+        {showErrors && (
+          <fieldset className='error-messages'>
+            <legend>Felmeddelanden</legend>
+            {Object.keys(errorFields).map(
+              (field) =>
+                errorFields[field].error && (
+                  <div key={field} style={{ color: 'red' }}>
+                    <a
+                      href={`#${field}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        inputRefs.current[field]?.focus();
+                      }}
+                      className='error-link'
+                      tabIndex={errorFields[field].error ? '0' : '-1'}
+                    >
+                      {errorFields[field].error}
+                    </a>
+                  </div>
+                )
+            )}
+          </fieldset>
+        )}
 
         <Input
-          type="text"
-          label="Namn"
-          name="name"
-          placeholder="Skriv ditt namn här"
+          type='text'
+          label='Namn'
+          name='name'
+          placeholder='Skriv ditt namn här'
           value={errorFields.name.value}
           error={errorFields.name.error}
           onChange={(e) => handleChange(e, 'name')}
           onBlur={(e) => handleBlur(e, 'name')}
-          ref={(el) => {
-            inputRefs.current.name = el;
-            console.log('Ref set for name input');
-          }}
+          ref={(el) => (inputRefs.current.name = el)}
         />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
         <Input
-          type="number"
-          label="Ålder"
-          name="age"
-          placeholder="Skriv din ålder här"
+          type='number'
+          label='Ålder'
+          name='age'
+          placeholder='Skriv din ålder här'
           value={errorFields.age.value}
           error={errorFields.age.error}
           onChange={(e) => handleChange(e, 'age')}
           onBlur={(e) => handleBlur(e, 'age')}
-          ref={(el) => {
-            inputRefs.current.age = el;
-            console.log('Ref set for age input');
-          }}
+          ref={(el) => (inputRefs.current.age = el)}
         />
-
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
         <Input
-          type="email"
-          label="E-post"
-          name="email"
-          placeholder="Skriv din email här"
+          type='email'
+          label='E-post'
+          name='email'
+          placeholder='Skriv din email här'
           value={errorFields.email.value}
           error={errorFields.email.error}
           onChange={(e) => handleChange(e, 'email')}
           onBlur={(e) => handleBlur(e, 'email')}
-          ref={(el) => {
-            inputRefs.current.email = el;
-            console.log('Ref set for email input');
-          }}
+          ref={(el) => (inputRefs.current.email = el)}
         />
-
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
         <Input
-          type="tel"
-          label="Telefonnummer"
-          name="phone"
-          placeholder="Skriv ditt telefonnummer här"
+          type='tel'
+          label='Telefonnummer'
+          name='phone'
+          placeholder='Skriv ditt telefonnummer här'
           value={errorFields.phone.value}
           error={errorFields.phone.error}
           onChange={(e) => handleChange(e, 'phone')}
           onBlur={(e) => handleBlur(e, 'phone')}
-          ref={(el) => {
-            inputRefs.current.phone = el;
-            console.log('Ref set for phone input');
-          }}
+          ref={(el) => (inputRefs.current.phone = el)}
         />
-
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
         <Input
-          type="password"
-          label="Lösenord"
-          name="password"
-          placeholder="Skriv ditt lösenord här"
+          type='password'
+          label='Lösenord'
+          name='password'
+          placeholder='Skriv ditt lösenord här'
           value={errorFields.password.value}
           error={errorFields.password.error}
           onChange={(e) => handleChange(e, 'password')}
           onBlur={(e) => handleBlur(e, 'password')}
-          ref={(el) => {
-            inputRefs.current.password = el;
-            console.log('Ref set for password input');
-          }}
+          ref={(el) => (inputRefs.current.password = el)}
         />
-
-        <button type="submit">Skicka</button>
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <button type='submit'>Skicka</button>
       </form>
     </div>
   );

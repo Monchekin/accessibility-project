@@ -15,7 +15,7 @@ const Input = ({
   onFocus,
   setId, // Callback för att skicka ID tillbaka till App.js
 }) => {
-  const id = `input-${uuidv4()}`; 
+  const id = `input-${uuidv4()}`;
 
   useEffect(() => {
     if (setId) {
@@ -69,7 +69,7 @@ Input.propTypes = {
   required: PropTypes.bool,
   error: PropTypes.string,
   onFocus: PropTypes.func,
-  setId: PropTypes.func, 
+  setId: PropTypes.func,
 };
 
 Input.defaultProps = {
