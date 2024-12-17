@@ -1,4 +1,3 @@
-// * INLINE MESSAGES
 import React, { forwardRef } from 'react';
 import styles from './Input.module.css';
 import PropTypes from 'prop-types';
