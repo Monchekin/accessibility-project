@@ -10,8 +10,8 @@ export const validateField = (value, type) => {
     error = value < 18 ? 'Du måste vara minst 18 år gammal' : '';
   }
   if (type === 'email') {
-    const hasAtSymbol = /@/.test(value); 
-    const hasDot = /\./.test(value); 
+    const hasAtSymbol = /@/.test(value);
+    const hasDot = /\./.test(value);
 
     if (value.length === 0) {
       error = 'E-postadress kan inte vara tom';
@@ -39,7 +39,7 @@ export const validateField = (value, type) => {
     } else if (!hasNumber) {
       error = 'Lösenordet måste innehålla minst en siffra';
     } else {
-      error = ''; 
+      error = '';
     }
   }
 
