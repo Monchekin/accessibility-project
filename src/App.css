@@ -1,0 +1,24 @@
+
+.error-messages {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+    /* display: none; */
+  /* Dölja felmeddelanden till en början */
+}
+
+/* När felmeddelanden ska synas (kan aktiveras med en klass eller state) */
+.error-messages.visible {
+  display: block; /* Gör felmeddelandena synliga */
+}
+
+/* Länk i felmeddelanden som användaren kan klicka på */
+.error-link {
+  display: block;
+  margin: 10px 0;
+  color: #0056b3; /* Blå länkfärg */
+}
+
+.error-link:focus {
+  outline: 2px solid #0056b3;
+}

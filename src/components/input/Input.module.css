@@ -1,0 +1,40 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 11rem;
+}
+
+fieldset {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin-left: 5px;
+  color: red;
+}
+
+.inputError {
+  border: 2px solid red;
+  background-color: #f8d7da;
+}
