@@ -51,7 +51,11 @@ const Input = forwardRef(
             autoFocus={autoFocus}
             ref={ref}
           />
-          {error && <span className={styles['error-icon']}>!</span>}
+          {error && (
+            <span className={styles['error-icon']} aria-hidden='true'>
+              !
+            </span>
+          )}
         </div>
 
         {/* Error message if validation fails */}

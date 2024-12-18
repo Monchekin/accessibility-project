@@ -32,9 +32,13 @@ fieldset {
   vertical-align: middle;
   margin-left: 5px;
   color: red;
+  overflow: hidden;
+white-space: nowrap;
 }
 
 .inputError {
   border: 2px solid red;
   background-color: #f8d7da;
+  
 }
+

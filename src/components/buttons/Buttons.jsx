@@ -18,7 +18,7 @@ const Buttons = () => {
 
   return (
     <>
-    <h3>Här är min knappar</h3>
+    <h3>Här är mina knappar</h3>
       {/* text-button */}
       <button
         className={styles['button']}

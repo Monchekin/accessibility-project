@@ -1,4 +1,38 @@
+/* App.js style */
+.app-container {
+  display:flex;
+  gap: 20px;
+}
 
+.app-section {
+opacity: 0.5; 
+  padding: 10px;
+  border: 1px solid gray;
+  outline: none; 
+}
+
+.app-section.focused {
+  outline: 2px solid green;
+  opacity: 1;
+}
+
+.app-section.focused {
+  border-color: blue;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.focus-button {
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.focus-button:hover {
+  background-color: rgb(182, 180, 180);
+}
+
+/* input style */
 .error-messages {
   margin-bottom: 20px;
   padding: 10px;

@@ -1,4 +1,3 @@
-// * APP TILL INLINE MEDDELANDEN
 import React, { useState, useRef } from 'react';
 import Input from './components/input/Input';
 import './App.css';
@@ -10,7 +9,7 @@ const AppInline = () => {
   const inputRefs = useRef({});
   const delayRef = useRef(null);
 
-  // Handle changes to input fields
+  // Handles changes in input fields, validates and updates error state
   const handleChange = (e, name) => {
     const { value } = e.target;
     const error = validateField(value, name);
@@ -27,7 +26,7 @@ const AppInline = () => {
       clearTimeout(delayRef.current);
     }
 
-    // Starta ny timer
+    // Starts a new timer to update the live feedback message after 1 second
     delayRef.current = setTimeout(() => {
       const feedbackSpan = document.getElementById('feedback');
       if (feedbackSpan) {
@@ -36,7 +35,7 @@ const AppInline = () => {
     }, 1000);
   };
 
-  // Validate field on blur and update errors
+  // Validates field when it loses focus and updates errors
   const handleBlur = (e, fieldName) => {
     const { value } = e.target;
     const error = validateField(value, fieldName);
@@ -50,12 +49,14 @@ const AppInline = () => {
     }));
   };
 
+  // Handles form submission, validates all fields and updates error state
   const handleSubmit = (e) => {
     e.preventDefault();
 
     let newErrors = {};
     let hasErrors = false;
 
+    // Validates all fields and sets errors where needed
     Object.keys(errorFields).forEach((field) => {
       const value = errorFields[field].value || '';
       const error = validateField(value, field);
@@ -71,22 +72,23 @@ const AppInline = () => {
       ...newErrors,
     }));
 
+    // If there are errors, focus on the first field with an error
     if (hasErrors) {
-      // Hitta det första fältet med ett fel och sätt fokus
       const firstErrorField = Object.keys(newErrors).find(
         (field) => newErrors[field].error
       );
       if (firstErrorField) {
-        inputRefs.current[firstErrorField]?.focus(); // Sätt fokus på det fältet
+        inputRefs.current[firstErrorField]?.focus();
       }
       console.log('Formuläret har fel och kan inte skickas.');
       return;
     }
 
-    // Om inga fel, formuläret kan skickas
+    // If no errors, the form is successfully submitted
     console.log('Formuläret är skickat!');
   };
 
+  // Handles combined change of input and stores the current input value
   const handleCombinedChange = (e) => {
     handleChange(e, 'name');
     setInputValue(e.target.value);
@@ -105,7 +107,6 @@ const AppInline = () => {
         value={errorFields.name.value}
         error={errorFields.name.error}
         onChange={handleCombinedChange}
-        // aria-label={`Du har skrivit: ${inputValue}`}
         onBlur={(e) => handleBlur(e, 'name')}
         ref={(el) => (inputRefs.current.name = el)}
         aria-describedby={errorFields.name.error ? `error-name` : undefined}

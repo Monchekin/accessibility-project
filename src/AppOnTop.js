@@ -1,4 +1,3 @@
-// * APP TILL INPUT.JSX - ON-TOP
 import React, { useState, useRef } from 'react';
 import Input from './components/input/Input';
 import './App.css';
@@ -11,10 +10,11 @@ const AppOnTop = () => {
   const inputRefs = useRef({});
   const delayRef = useRef(null);
   const formRef = useRef(null);
-  const isMouseInteraction = useRef(false); // Flagga för musinteraktion
+  const isMouseInteraction = useRef(false);
 
+  // Focus on the first error link if there are any errors
   const focusOnFirstError = () => {
-    if (isMouseInteraction.current) return; // Hoppa över om musen användes
+    if (isMouseInteraction.current) return;
 
     const errorLinks = document.querySelectorAll('.error-link[tabindex="0"]');
     if (errorLinks.length > 0) {
@@ -23,11 +23,12 @@ const AppOnTop = () => {
     }
   };
 
+  // Set the mouse interaction flag when mouse is pressed down
   const handleMouseDown = () => {
-    isMouseInteraction.current = true; // Markera att musen används
+    isMouseInteraction.current = true;
   };
 
-  // Återställer felmeddelanden vid användarinteraktion och uppdaterar errorFields
+  // Resets error messages during user interaction and updates errorFields
   const handleChange = (e, name) => {
     const { value } = e.target;
     const error = validateField(value, name);
@@ -40,7 +41,7 @@ const AppOnTop = () => {
       },
     }));
 
-    // Fördröjd uppdatering av feedback
+    // Delayed feedback update
     if (delayRef.current) {
       clearTimeout(delayRef.current);
     }
@@ -53,8 +54,9 @@ const AppOnTop = () => {
     }, 1000);
   };
 
+  // Handles blur event, validates the field, and sets error if necessary
   const handleBlur = (e, fieldName) => {
-    isMouseInteraction.current = false; // Återställ när input tappar fokus
+    isMouseInteraction.current = false;
 
     const { value } = e.target;
     const error = validateField(value, fieldName);
@@ -75,14 +77,15 @@ const AppOnTop = () => {
     }
   };
 
+  // Handles form submission, validates all fields, and displays errors if needed
   const handleSubmit = (e) => {
     e.preventDefault();
-    isMouseInteraction.current = false; // Återställ flaggan vid Submit
+    isMouseInteraction.current = false;
 
     let newErrors = {};
     let hasErrors = false;
 
-    // Validera alla fält
+    // Validates all fields
     Object.keys(errorFields).forEach((field) => {
       const value = errorFields[field].value || '';
       const error = validateField(value, field);
@@ -111,15 +114,13 @@ const AppOnTop = () => {
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        onMouseDown={handleMouseDown} // Registrera musinteraktion
-        ref={formRef}
-      >
+      <form onSubmit={handleSubmit} onMouseDown={handleMouseDown} ref={formRef}>
         <h3>Du tittar nu på OnTop-meddelanden</h3>
         {showErrors && (
           <fieldset className='error-messages'>
-            <legend>Felmeddelanden</legend>
+            <legend aria-live='polite' aria-atomic='true'>
+              Error Messages
+            </legend>
             {Object.keys(errorFields).map(
               (field) =>
                 errorFields[field].error && (
@@ -141,6 +142,7 @@ const AppOnTop = () => {
           </fieldset>
         )}
 
+        {/* Name Input */}
         <Input
           type='text'
           label='Namn'
@@ -154,6 +156,7 @@ const AppOnTop = () => {
         />
         <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
+        {/* Age Input */}
         <Input
           type='number'
           label='Ålder'
@@ -166,6 +169,8 @@ const AppOnTop = () => {
           ref={(el) => (inputRefs.current.age = el)}
         />
         <span id='feedback' aria-live='polite' className='hidden-feedback' />
+
+        {/* Email Input */}
         <Input
           type='email'
           label='E-post'
@@ -178,6 +183,8 @@ const AppOnTop = () => {
           ref={(el) => (inputRefs.current.email = el)}
         />
         <span id='feedback' aria-live='polite' className='hidden-feedback' />
+
+        {/* Phone Number Input */}
         <Input
           type='tel'
           label='Telefonnummer'
@@ -190,6 +197,8 @@ const AppOnTop = () => {
           ref={(el) => (inputRefs.current.phone = el)}
         />
         <span id='feedback' aria-live='polite' className='hidden-feedback' />
+
+        {/* Password Input */}
         <Input
           type='password'
           label='Lösenord'
