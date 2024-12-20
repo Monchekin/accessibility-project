@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import Input from './components/input/Input';
-import './App.css';
-import { validateField, setupFields } from './components/input/Validation';
+import Input from './Input';
+import '../../App.css';
+import { validateField, setupFields } from './Validation';
 
 const AppInline = () => {
   const [errorFields, setErrorFields] = useState(setupFields);
