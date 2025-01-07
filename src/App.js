@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
 import Navbar from './components/navbar/Navbar';
+import HomePage from './pages/HomePage';
 import Buttons from './pages/ButtonPage';
 import InlineInput from './pages/InlineInputPage';
 import OnTopInput from './pages/OnTopInputPage';
 import './App.css';
 
 const App = () => {
+  
+  useEffect(() => {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.focus();
+    }
+  }, []);
+
   return (
     <>
       <div className='appContentWrap'>

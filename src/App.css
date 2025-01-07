@@ -1,14 +1,14 @@
-/* App.js style */
+/************ App.js style ************/
 .app-container {
-  display:flex;
+  display: flex;
   gap: 20px;
 }
 
 .app-section {
-opacity: 0.5; 
+  opacity: 0.5;
   padding: 10px;
   border: 1px solid gray;
-  outline: none; 
+  outline: none;
 }
 
 .app-section.focused {
@@ -32,7 +32,6 @@ opacity: 0.5;
   background-color: rgb(182, 180, 180);
 }
 
-/* input style */
 .error-messages {
   margin-bottom: 20px;
   padding: 10px;
@@ -42,7 +41,7 @@ opacity: 0.5;
 .error-link {
   display: block;
   margin: 10px 0;
-  color: #0056b3; /* Blå länkfärg */
+  color: #0056b3;
 }
 
 .error-link:focus {

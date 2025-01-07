@@ -1,0 +1,115 @@
+/* Buttons*/
+
+.mainContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* Rubrikstilar */
+.heading {
+  color: #2c3e50;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.3em;
+}
+
+.subHeading {
+  margin-top: 1.2em;
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+/* Textstilar */
+.paragraph {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Grundläggande styling för listan */
+.list {
+  list-style: none; /* Tar bort standardpunktlistan */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Vertikal ordning för listan */
+  gap: 1em; /* Mellanrum mellan listobjekten */
+}
+
+/* Varje lista-item */
+.listItem {
+  display: flex;
+  flex-direction: column; /* Staplar rubrik och text vertikalt */
+  justify-content: flex-start; /* Börja vid toppen */
+  align-items: flex-start; /* Vänsterjusterar allt innehåll */
+  width: 100%; /* Gör listobjekten fullbredd */
+  padding: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-sizing: border-box; /* Inkluderar padding i bredd och höjd */
+  text-align: left; /* Tvingar innehållet till vänsterjustering */
+}
+
+/* Rubrik ovanför text */
+.itemHeader {
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 0.5em; /* Luft mellan rubriken och texten */
+  text-align: left; /* Säkerställ att rubriken är vänsterjusterad */
+}
+
+/* Text under rubriken */
+.itemText {
+  color: #34495e;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left; /* Vänsterjustering av texten */
+  overflow: hidden; /* Döljer eventuell överflödig text */
+  text-overflow: ellipsis; /* Markerar överflödig text med "..." */
+  white-space: normal; /* Låter texten bryta på flera rader */
+}
+
+/* Inline-kod */
+.inlineCode {
+  background-color: #f1f1f1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.codeBlock {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.inlineCode {
+  background-color: #f1f1f1;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Separat linje */
+.separator {
+  border: none;
+  border-top: 1px solid #ecf0f1;
+  margin: 2em 0;
+}
+
+/* Fokus för tillgänglighet */
+:focus {
+  outline: 3px solid #3498db;
+  outline-offset: 2px;
+}

@@ -1,0 +1,57 @@
+nav {
+  background-color: #333;
+  padding: 10px;
+  height: 2.5 rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li {
+  display: inline-flex; /* Behåll elementen horisontella */
+  align-items: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  outline: none;
+  align-items: center;
+}
+
+a:hover,
+a:focus {
+  border-radius: 4px;
+}
+
+a:focus {
+  box-shadow: 0 0 2px 2px #fff; /* Fokus på länken när du tabbar */
+}
+
+a[aria-current='page'] {
+  font-weight: bold; /* Gör den aktiva länken fet */
+  box-shadow: 0 0 5px 3px #443ac9; /* Markera aktiv länk med en visuell indikator */
+}
+
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skipLink:focus {
+  top: 10px;
+  z-index: 10;
+}

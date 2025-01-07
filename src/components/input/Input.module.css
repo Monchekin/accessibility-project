@@ -1,3 +1,4 @@
+/************ input style ************/
 .input-container {
   display: flex;
   flex-direction: column;
@@ -22,23 +23,34 @@ fieldset {
   margin-bottom: 1rem;
 }
 
-.input-wrapper {
-  display: flex;
-  align-items: center;
-}
-
 .error-icon {
   font-size: 1.5rem;
   vertical-align: middle;
   margin-left: 5px;
   color: red;
   overflow: hidden;
-white-space: nowrap;
+  white-space: nowrap;
 }
 
 .inputError {
   border: 2px solid red;
   background-color: #f8d7da;
-  
 }
 
+/*! FUNKAR INTE FÖRTILLFÄLET - LIGGER I APP.CSS ISTÄLLET */
+/* .error-messages {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-link {
+  display: block;
+  margin: 10px 0;
+  color: #0056b3;
+}
+
+.error-link:focus {
+  outline: 2px solid #0056b3;
+  padding: 1%;
+} */

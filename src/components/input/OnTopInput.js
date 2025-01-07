@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react';
+import styles from './Input.module.css';
+
 import Input from './Input';
 import '../../App.css';
+
 import { validateField, setupFields } from './Validation';
 
 const AppOnTop = () => {
@@ -154,7 +157,11 @@ const AppOnTop = () => {
           onBlur={(e) => handleBlur(e, 'name')}
           ref={(el) => (inputRefs.current.name = el)}
         />
-        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <span
+          id='feedback'
+          aria-live='polite'
+          // className={styles['hidden-feedback']}
+        />
 
         {/* Age Input */}
         <Input
@@ -168,7 +175,11 @@ const AppOnTop = () => {
           onBlur={(e) => handleBlur(e, 'age')}
           ref={(el) => (inputRefs.current.age = el)}
         />
-        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <span
+          id='feedback'
+          aria-live='polite'
+          // className={styles['hidden-feedback']}
+        />
 
         {/* Email Input */}
         <Input
@@ -182,7 +193,11 @@ const AppOnTop = () => {
           onBlur={(e) => handleBlur(e, 'email')}
           ref={(el) => (inputRefs.current.email = el)}
         />
-        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <span
+          id='feedback'
+          aria-live='polite'
+          // className={styles['hidden-feedback']}
+        />
 
         {/* Phone Number Input */}
         <Input
@@ -196,7 +211,11 @@ const AppOnTop = () => {
           onBlur={(e) => handleBlur(e, 'phone')}
           ref={(el) => (inputRefs.current.phone = el)}
         />
-        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <span
+          id='feedback'
+          aria-live='polite'
+          // className={styles['hidden-feedback']}
+        />
 
         {/* Password Input */}
         <Input
@@ -210,7 +229,12 @@ const AppOnTop = () => {
           onBlur={(e) => handleBlur(e, 'password')}
           ref={(el) => (inputRefs.current.password = el)}
         />
-        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        <span
+          id='feedback'
+          aria-live='polite'
+          // className={styles['hidden-feedback']}
+        />
+
         <button type='submit'>Skicka</button>
       </form>
     </div>
