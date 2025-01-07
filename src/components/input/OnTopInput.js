@@ -1,6 +1,4 @@
 import React, { useState, useRef } from 'react';
-import styles from './Input.module.css';
-
 import Input from './Input';
 import '../../App.css';
 
@@ -9,6 +7,7 @@ import { validateField, setupFields } from './Validation';
 const AppOnTop = () => {
   const [errorFields, setErrorFields] = useState(setupFields);
   const [showErrors, setShowErrors] = useState(false);
+  const [formStatus, setFormStatus] = useState('');
 
   const inputRefs = useRef({});
   const delayRef = useRef(null);
@@ -107,22 +106,24 @@ const AppOnTop = () => {
     }));
 
     if (hasErrors) {
+      setFormStatus('Formuläret kan inte skickas, se felmeddelanden.');
       setShowErrors(true);
       setTimeout(() => focusOnFirstError(), 0);
       return;
     }
 
+    setFormStatus('Formuläret är skickat!');
     console.log('Form successfully submitted!');
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit} onMouseDown={handleMouseDown} ref={formRef}>
-        <h3>Du tittar nu på OnTop-meddelanden</h3>
+        <h2>Inputs med OnTop-meddelanden</h2>
         {showErrors && (
           <fieldset className='error-messages'>
             <legend aria-live='polite' aria-atomic='true'>
-              Error Messages
+              Felmeddelanden
             </legend>
             {Object.keys(errorFields).map(
               (field) =>
@@ -237,6 +238,7 @@ const AppOnTop = () => {
 
         <button type='submit'>Skicka</button>
       </form>
+      {formStatus && <p role='alert'>{formStatus}</p>}
     </div>
   );
 };

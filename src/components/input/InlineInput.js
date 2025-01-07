@@ -6,8 +6,15 @@ import { validateField, setupFields } from './Validation';
 const AppInline = () => {
   const [errorFields, setErrorFields] = useState(setupFields);
   const [inputValue, setInputValue] = useState('');
+  const [formStatus, setFormStatus] = useState('');
+
   const inputRefs = useRef({});
   const delayRef = useRef(null);
+
+  const speakMessage = (message) => {
+    const utterance = new SpeechSynthesisUtterance(message);
+    speechSynthesis.speak(utterance);
+  };
 
   // Handles changes in input fields, validates and updates error state
   const handleChange = (e, name) => {
@@ -80,12 +87,15 @@ const AppInline = () => {
       if (firstErrorField) {
         inputRefs.current[firstErrorField]?.focus();
       }
-      console.log('Formuläret har fel och kan inte skickas.');
+      const errorMessage = 'Formuläret kan inte skickas, se felmeddelanden.';
+      setFormStatus(errorMessage);  
       return;
     }
 
     // If no errors, the form is successfully submitted
-    console.log('Formuläret är skickat!');
+    const successMessage = 'Formuläret är skickat!';
+    setFormStatus(successMessage); 
+    speakMessage(successMessage); 
   };
 
   // Handles combined change of input and stores the current input value
@@ -95,92 +105,101 @@ const AppInline = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Du tittar nu på inline-meddelanden</h3>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2>Inputs med inline-meddelanden</h2>
 
-      {/* Name Input */}
-      <Input
-        type='text'
-        label='Namn'
-        name='name'
-        placeholder='Skriv ditt namn här'
-        value={errorFields.name.value}
-        error={errorFields.name.error}
-        onChange={handleCombinedChange}
-        onBlur={(e) => handleBlur(e, 'name')}
-        ref={(el) => (inputRefs.current.name = el)}
-        aria-describedby={errorFields.name.error ? `error-name` : undefined}
-        required
-      />
-      <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        {/* Name Input */}
+        <Input
+          type='text'
+          label='Namn'
+          name='name'
+          placeholder='Skriv ditt namn här'
+          value={errorFields.name.value}
+          error={errorFields.name.error}
+          onChange={handleCombinedChange}
+          onBlur={(e) => handleBlur(e, 'name')}
+          ref={(el) => (inputRefs.current.name = el)}
+          aria-describedby={errorFields.name.error ? `error-name` : undefined}
+          required
+        />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
-      {/* Age Input */}
-      <Input
-        type='number'
-        label='Ålder'
-        name='age'
-        placeholder='Skriv din ålder här'
-        value={errorFields.age.value}
-        error={errorFields.age.error}
-        onChange={(e) => handleChange(e, 'age')}
-        onBlur={(e) => handleBlur(e, 'age')}
-        ref={(el) => (inputRefs.current.age = el)}
-        aria-describedby={errorFields.age.error ? `error-age` : undefined}
-        required
-      />
-      <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        {/* Age Input */}
+        <Input
+          type='number'
+          label='Ålder'
+          name='age'
+          placeholder='Skriv din ålder här'
+          value={errorFields.age.value}
+          error={errorFields.age.error}
+          onChange={(e) => handleChange(e, 'age')}
+          onBlur={(e) => handleBlur(e, 'age')}
+          ref={(el) => (inputRefs.current.age = el)}
+          aria-describedby={errorFields.age.error ? `error-age` : undefined}
+          required
+        />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
-      {/* Email Input */}
-      <Input
-        type='email'
-        label='E-post'
-        name='email'
-        placeholder='Skriv din email här'
-        value={errorFields.email.value}
-        error={errorFields.email.error}
-        onChange={(e) => handleChange(e, 'email')}
-        onBlur={(e) => handleBlur(e, 'email')}
-        ref={(el) => (inputRefs.current.email = el)}
-        aria-describedby={errorFields.email.error ? `error-email` : undefined}
-        required
-      />
-      <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        {/* Email Input */}
+        <Input
+          type='email'
+          label='E-post'
+          name='email'
+          placeholder='Skriv din email här'
+          value={errorFields.email.value}
+          error={errorFields.email.error}
+          onChange={(e) => handleChange(e, 'email')}
+          onBlur={(e) => handleBlur(e, 'email')}
+          ref={(el) => (inputRefs.current.email = el)}
+          aria-describedby={errorFields.email.error ? `error-email` : undefined}
+          required
+        />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
-      {/* Phone Number Input */}
-      <Input
-        type='tel'
-        label='Telefonnummer'
-        name='phone'
-        placeholder='Skriv ditt telefonnummer här'
-        value={errorFields.phone.value}
-        error={errorFields.phone.error}
-        onChange={(e) => handleChange(e, 'phone')}
-        onBlur={(e) => handleBlur(e, 'phone')}
-        ref={(el) => (inputRefs.current.phone = el)}
-        aria-describedby={errorFields.phone.error ? `error-phone` : undefined}
-        required
-      />
-      <span id='feedback' aria-live='polite' className='hidden-feedback' />
+        {/* Phone Number Input */}
+        <Input
+          type='tel'
+          label='Telefonnummer'
+          name='phone'
+          placeholder='Skriv ditt telefonnummer här'
+          value={errorFields.phone.value}
+          error={errorFields.phone.error}
+          onChange={(e) => handleChange(e, 'phone')}
+          onBlur={(e) => handleBlur(e, 'phone')}
+          ref={(el) => (inputRefs.current.phone = el)}
+          aria-describedby={errorFields.phone.error ? `error-phone` : undefined}
+          required
+        />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
 
-      {/* Password Input */}
-      <Input
-        type='password'
-        label='Lösenord'
-        name='password'
-        placeholder='Skriv ditt lösenord här'
-        value={errorFields.password.value}
-        error={errorFields.password.error}
-        onChange={(e) => handleChange(e, 'password')}
-        onBlur={(e) => handleBlur(e, 'password')}
-        ref={(el) => (inputRefs.current.password = el)}
-        aria-describedby={
-          errorFields.password.error ? `error-password` : undefined
-        }
-        required
-      />
-      <span id='feedback' aria-live='polite' className='hidden-feedback' />
-      <button type='submit'>Skicka</button>
-    </form>
+        {/* Password Input */}
+        <Input
+          type='password'
+          label='Lösenord'
+          name='password'
+          placeholder='Skriv ditt lösenord här'
+          value={errorFields.password.value}
+          error={errorFields.password.error}
+          onChange={(e) => handleChange(e, 'password')}
+          onBlur={(e) => handleBlur(e, 'password')}
+          ref={(el) => (inputRefs.current.password = el)}
+          aria-describedby={
+            errorFields.password.error ? `error-password` : undefined
+          }
+          required
+        />
+        <span id='feedback' aria-live='polite' className='hidden-feedback' />
+
+        <button type='submit'>Skicka</button>
+      </form>
+      
+      {formStatus && (
+        <div>
+          <p>{formStatus}</p>
+        </div>
+      )}
+    </div>
   );
 };
 

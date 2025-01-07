@@ -9,12 +9,12 @@ ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 li {
-  display: inline-flex; /* Behåll elementen horisontella */
+  display: inline-flex;
   align-items: center;
 }
 
@@ -32,12 +32,12 @@ a:focus {
 }
 
 a:focus {
-  box-shadow: 0 0 2px 2px #fff; /* Fokus på länken när du tabbar */
+  box-shadow: 0 0 2px 2px #fff;
 }
 
 a[aria-current='page'] {
-  font-weight: bold; /* Gör den aktiva länken fet */
-  box-shadow: 0 0 5px 3px #443ac9; /* Markera aktiv länk med en visuell indikator */
+  font-weight: bold;
+  box-shadow: 0 0 5px 3px #443ac9;
 }
 
 .skipLink {

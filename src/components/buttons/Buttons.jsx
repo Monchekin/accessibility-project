@@ -18,7 +18,7 @@ const Buttons = () => {
 
   return (
     <>
-      <h2>Här är mina knappar</h2>
+      <h2>Tre tillgängliga knappar</h2>
       {/* text-button */}
       <button
         className={styles['button']}
@@ -58,7 +58,3 @@ const Buttons = () => {
 
 export default Buttons;
 
-// TODO:   Dagens uppgift nr.2:
-// TODO: - Knapp med text
-// TODO: - Knapp med endast en ikon
-// TODO: - Knapp med text och ikon

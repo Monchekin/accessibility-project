@@ -1,14 +1,18 @@
 import OnTopInput from '../components/input/OnTopInput';
+import styles from './Pages.module.css';
 
 const OnTopInputPage = () => {
   return (
-    <div>
-      <main id='main-content'>
+    <div className={styles.pageContainer}>
+      <main id='main-content' className={styles.mainContent}>
         <OnTopInput />
+        <hr className={styles.separator} />
 
-        <h3>Välkommen till vår Input-komponent!</h3>
+        <h3 className={styles.heading}>
+          Information om min Input-komponent med onTop-meddelanden
+        </h3>
 
-        <p>
+        <p className={styles.paragraph}>
           Här hittar du en flexibel och tillgänglig lösning för att skapa
           anpassade formulärfält med etiketter, validering och responsiv design.
           Input-komponenten är utformad för att stödja en rad olika fält,
@@ -16,154 +20,196 @@ const OnTopInputPage = () => {
           också funktioner för felhantering och användarfeedback.
         </p>
 
-        <hr />
+        <hr className={styles.separator} />
 
-        <h4>Props för Input-komponenten</h4>
-        <p>Komponenten har följande props:</p>
-        <ul>
-          <li>
-            <strong>type</strong>: Bestämmer typen av input (t.ex. text,
-            lösenord, e-post, telefonnummer, etc.). Detta gör att komponenten
-            kan anpassa sig efter olika behov.
+        <h4 className={styles.subHeading}>Props för Input-komponenten</h4>
+        <p className={styles.paragraph}>Komponenten har följande props:</p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`type`:</div>
+            <div className={styles.itemText}>
+              Bestämmer typen av input (t.ex. text, lösenord, e-post,
+              telefonnummer, etc.). Detta gör att komponenten kan anpassa sig
+              efter olika behov.
+            </div>
           </li>
-          <li>
-            <strong>label</strong>: Etiketten som visas för inputfältet. Denna
-            är obligatorisk och hjälper användare att förstå vad fältet ska
-            innehålla.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`label`:</div>
+            <div className={styles.itemText}>
+              Etiketten som visas för inputfältet. Denna är obligatorisk och
+              hjälper användare att förstå vad fältet ska innehålla.
+            </div>
           </li>
-          <li>
-            <strong>name</strong>: Namnet på inputfältet som används för att
-            referera till fältet i formuläret.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`name`:</div>
+            <div className={styles.itemText}>
+              Namnet på inputfältet som används för att referera till fältet i
+              formuläret.
+            </div>
           </li>
-          <li>
-            <strong>value</strong>: Värdet i inputfältet. Detta är nödvändigt
-            för att hålla reda på användarens inmatning.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`value`:</div>
+            <div className={styles.itemText}>
+              Värdet i inputfältet. Detta är nödvändigt för att hålla reda på
+              användarens inmatning.
+            </div>
           </li>
-          <li>
-            <strong>onChange</strong>: En funktion som anropas när användaren
-            ändrar värdet i inputfältet.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`onChange`:</div>
+            <div className={styles.itemText}>
+              En funktion som anropas när användaren ändrar värdet i
+              inputfältet.
+            </div>
           </li>
-          <li>
-            <strong>onBlur</strong>: En funktion som anropas när inputfältet
-            förlorar fokus.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`onBlur`:</div>
+            <div className={styles.itemText}>
+              En funktion som anropas när inputfältet förlorar fokus.
+            </div>
           </li>
-          <li>
-            <strong>onKeyDown</strong>: En funktion som anropas när en tangent
-            trycks ner på tangentbordet.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`onKeyDown`:</div>
+            <div className={styles.itemText}>
+              En funktion som anropas när en tangent trycks ner på
+              tangentbordet.
+            </div>
           </li>
-          <li>
-            <strong>placeholder</strong>: En text som visas i inputfältet när
-            det är tomt.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`placeholder`:</div>
+            <div className={styles.itemText}>
+              En text som visas i inputfältet när det är tomt.
+            </div>
           </li>
-          <li>
-            <strong>required</strong>: Anger om fältet är obligatoriskt att
-            fylla i.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`required`:</div>
+            <div className={styles.itemText}>
+              Anger om fältet är obligatoriskt att fylla i.
+            </div>
           </li>
-          <li>
-            <strong>error</strong>: Ett felmeddelande som visas om validering
-            misslyckas.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`error`:</div>
+            <div className={styles.itemText}>
+              Ett felmeddelande som visas om validering misslyckas.
+            </div>
           </li>
-          <li>
-            <strong>autoFocus</strong>: Om inputfältet ska få fokus vid
-            sidladdning.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`autoFocus`:</div>
+            <div className={styles.itemText}>
+              Om inputfältet ska få fokus vid sidladdning.
+            </div>
           </li>
-          <li>
-            <strong>ref</strong>: En referens som gör att externa komponenter
-            kan få åtkomst till inputfältet.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`ref`:</div>
+            <div className={styles.itemText}>
+              En referens som gör att externa komponenter kan få åtkomst till
+              inputfältet.
+            </div>
           </li>
         </ul>
 
-        <hr />
+        <hr className={styles.separator} />
 
-        <h4>Tillgänglig design i fokus</h4>
-        <p>
-          Vi har lagt stor vikt vid att göra Input-komponenten tillgänglig för
-          alla användare:
-        </p>
-        <ul>
-          <li>
-            <strong>Skärmläsarstöd</strong>: För att säkerställa att alla
-            användare, inklusive de som använder skärmläsare, kan förstå fältet,
-            har vi inkluderat en etikett (<code>&lt;label&gt;</code>) som är
-            kopplad till inputfältet via <code>htmlFor</code>.
+        <h4 className={styles.subHeading}>Tillgänglig design i fokus</h4>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Skärmläsarstöd:</div>
+            <div className={styles.itemText}>
+              För att säkerställa att alla användare, inklusive de som använder
+              skärmläsare, kan förstå fältet, har jag inkluderat en etikett (
+              <code className={styles.inlineCode}>&lt;label&gt;</code>) som är
+              kopplad till inputfältet via
+              <code className={styles.inlineCode}>htmlFor</code>. Dessutom
+              används
+              <code className={styles.inlineCode}>aria-live</code> och andra
+              ARIA-attribut för att säkerställa att användare med hjälpmedel får
+              rätt feedback i realtid.
+            </div>
           </li>
-          <li>
-            <strong>Felhantering och feedback</strong>: När validering
-            misslyckas visas ett felmeddelande under fältet, och fältet får en
-            särskild CSS-klass för att indikera att något är fel. Felmeddelandet
-            är också tillgängligt för skärmläsare genom{' '}
-            <code>aria-live="assertive"</code>.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Felhantering och feedback:</div>
+            <div className={styles.itemText}>
+              När validering misslyckas visas ett felmeddelande under fältet,
+              och fältet får en särskild CSS-klass för att indikera att något är
+              fel. Felmeddelandet är också tillgängligt för skärmläsare genom
+              <code className={styles.inlineCode}>aria-live="assertive"</code>,
+              vilket innebär att användaren omedelbart får veta om ett fel utan
+              att behöva leta efter det.
+            </div>
           </li>
-          <li>
-            <strong>Semantiska element</strong>: Vi använder semantiska
-            HTML-element, såsom <code>&lt;label&gt;</code> och{' '}
-            <code>&lt;input&gt;</code>, för att säkerställa att formuläret är
-            logiskt strukturerat och tillgängligt för skärmläsare och användare.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Semantiska element:</div>
+            <div className={styles.itemText}>
+              Jag använder mig av semantiska HTML-element, såsom
+              <code className={styles.inlineCode}>&lt;label&gt;</code> och
+              <code className={styles.inlineCode}>&lt;input&gt;</code>, för att
+              säkerställa att formuläret är logiskt strukturerat och
+              tillgängligt för skärmläsare och användare. Semantiska element gör
+              det enklare för hjälpmedel att tolka och läsa upp innehållet för
+              användarna.
+            </div>
           </li>
-          <li>
-            <strong>Fokusindikatorer (via CSS)</strong>: För att förbättra
-            tangentbordsnavigeringen kan du lägga till fokusindikatorer i din
-            CSS-stil, vilket gör det lättare för användare att se vilket fält
-            som är aktivt.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Fokusindikatorer (via CSS):</div>
+            <div className={styles.itemText}>
+              För att förbättra tangentbordsnavigeringen kan du lägga till
+              fokusindikatorer i din CSS-stil, vilket gör det lättare för
+              användare att se vilket fält som är aktivt. Detta hjälper
+              användare som navigerar med tangentbordet att förstå vilken del av
+              formuläret de för närvarande interagerar med.
+            </div>
           </li>
         </ul>
 
-        <hr />
+        <hr className={styles.separator} />
 
-        <h4>Exempel på användning</h4>
-        <p>
-          Du kan enkelt lägga till vår Input-komponent i din applikation. Här är
-          ett exempel på hur du använder den i ett formulär:
+        <h4 className={styles.subHeading}>Exempel på användning</h4>
+        <p className={styles.paragraph}>
+          Här är ett exempel på hur du använder den i ett formulär:
         </p>
 
-        <pre>
+        <pre className={styles.codeBlock}>
           <code>
             {`import React, { useState } from 'react';
-            import Input from './Input';
+import Input from './Input';
 
-            function App() {
-              const [formData, setFormData] = useState({ name: '', email: '' });
+function App() {
+  const [formData, setFormData] = useState({ name: '', email: '' });
 
-              const handleChange = (e, name) => {
-                setFormData({ ...formData, [name]: e.target.value });
-              };
+  const handleChange = (e, name) => {
+    setFormData({ ...formData, [name]: e.target.value });
+  };
 
-              return (
-                <form>
-                  <h1>Vänligen fyll i dina uppgifter</h1>
+  return (
+    <form>
+      <h1>Vänligen fyll i dina uppgifter</h1>
 
-                  <Input
-                    type="text"
-                    label="Namn"
-                    name="name"
-                    value={formData.name}
-                    onChange={(e) => handleChange(e, 'name')}
-                    required={true}
-                  />
+      <Input
+        type="text"
+        label="Namn"
+        name="name"
+        value={formData.name}
+        onChange={(e) => handleChange(e, 'name')}
+        required={true}
+      />
 
-                  <Input
-                    type="email"
-                    label="E-post"
-                    name="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange(e, 'email')}
-                    required={true}
-                  />
+      <Input
+        type="email"
+        label="E-post"
+        name="email"
+        value={formData.email}
+        onChange={(e) => handleChange(e, 'email')}
+        required={true}
+      />
 
-                  <button type="submit">Skicka</button>
-                </form>
-              );
-            }
+      <button type="submit">Skicka</button>
+    </form>
+  );
+}
 
-            export default App;
-                      `}
+export default App;
+           `}
           </code>
         </pre>
-
-        <p>
-          Med Input-komponenten får du ett flexibelt, tillgängligt och
-          användarvänligt sätt att hantera formulärfält i din applikation.
-        </p>
       </main>
     </div>
   );

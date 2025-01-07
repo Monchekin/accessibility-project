@@ -3,187 +3,201 @@ import styles from './Pages.module.css';
 
 const InlineInputPage = () => {
   return (
-    <div>
-      <main id='main-content'>
+    <div className={styles.pageContainer}>
+      <main id='main-content' className={styles.mainContent}>
         <InlineInput />
+        <hr className={styles.separator} />
 
-        <h3>Välkommen till vår Input-komponent!</h3>
+        <h3 className={styles.heading}>
+          Information om min Input-komponent med inlines
+        </h3>
 
-        <p>
-          Den här <strong>Input-komponenten</strong> är en anpassningsbar och
-          tillgänglig lösning för att hantera inmatning i formulär, inklusive
-          etiketter, validering och felmeddelanden. Den kan användas för alla
-          typer av inmatningar, såsom text, e-post, nummer, telefonnummer och
-          lösenord. Komponenten integrerar också smidig hantering av
-          felmeddelanden och live-feedback, vilket gör den perfekt för både
-          användarvänliga och tillgängliga formulär.
+        <p className={styles.paragraph}>
+          Den här Input-komponenten är en anpassningsbar och tillgänglig lösning
+          för att hantera inmatning i formulär, inklusive etiketter, validering
+          och felmeddelanden. Den kan användas för alla typer av inmatningar,
+          såsom text, e-post, nummer, telefonnummer och lösenord. Komponenten
+          integrerar en smidig hantering av felmeddelanden och live-feedback,
+          vilket gör den perfekt för både användarvänliga och tillgängliga
+          formulär.
         </p>
 
-        <hr />
+        <hr className={styles.separator} />
 
-        <h4>Props för Input-komponenten</h4>
-        <p>
-          Komponenten använder ett antal <strong>props</strong> för att anpassa
-          beteende och utseende:
-        </p>
-        <ul>
-          <li>
-            <strong>`type`</strong>: Bestämmer vilken typ av inmatning (t.ex.
-            text, lösenord, e-post). Krävs.
+        <h4 className={styles.subHeading}>Props för Input-komponenten</h4>
+        <p className={styles.paragraph}>Komponenten har följande props:</p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`type`:</div>
+            <div className={styles.itemText}>
+              Bestämmer vilken typ av inmatning (t.ex. text, lösenord, e-post).
+              <br /> Den är obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`label`</strong>: Texten som visas som etikett för fältet.
-            Krävs.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`label`:</div>
+            <div className={styles.itemText}>
+              Texten som visas som etikett för fältet. <br /> Den är
+              obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`name`</strong>: Unikt namn för inputfältet. Krävs.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`name`:</div>
+            <div className={styles.itemText}>
+              Unikt namn för inputfältet. <br /> Den är obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`value`</strong>: Värdet i inputfältet. Krävs.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`value`:</div>
+            <div className={styles.itemText}>
+              Värdet som visas i inputfältet. Kommer från det aktuella
+              tillståndet för fältet (t.ex. från `errorFields`). <br />
+              Den är obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`onChange`</strong>: Funktion som anropas vid förändring av
-            inputfältets värde. Krävs.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`onChange`:</div>
+            <div className={styles.itemText}>
+              Funktion som anropas när användaren ändrar innehållet i fältet
+              (t.ex. `handleChange`). <br />
+              Den är obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`onBlur`</strong>: Funktion som anropas när inputfältet
-            förlorar fokus. Krävs.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`onBlur`:</div>
+            <div className={styles.itemText}>
+              Funktion som anropas när fältet förlorar fokus (t.ex.
+              `handleBlur`). <br />
+              Den är obligatorisk.
+            </div>
           </li>
-          <li>
-            <strong>`onKeyDown`</strong>: Funktion som anropas vid
-            tangentbordshändelser i fältet.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`placeholder`:</div>
+            <div className={styles.itemText}>
+              Texten som visas som platsinnehåll i inputfältet när det är tomt
+              (t.ex. 'Skriv ditt namn här'). <br />
+              Den är valfri.
+            </div>
           </li>
-          <li>
-            <strong>`placeholder`</strong>: Text som visas i fältet som en
-            förhandsvisning.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`error`:</div>
+            <div className={styles.itemText}>
+              Eventuellt felmeddelande som är kopplat till fältet. <br />
+              Den är valfri.
+            </div>
           </li>
-          <li>
-            <strong>`required`</strong>: Om fältet är obligatoriskt (boolean).
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`ref`:</div>
+            <div className={styles.itemText}>
+              En referens till inputfältet, används för att fokusera på fältet
+              vid behov. <br />
+              Den är valfri.
+            </div>
           </li>
-          <li>
-            <strong>`error`</strong>: Felmeddelande som visas om inmatningen
-            inte är korrekt.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`aria-describedby`:</div>
+            <div className={styles.itemText}>
+              ARIA-egenskap som kopplar ett felmeddelande (om det finns) till
+              inputfältet för att ge tillgänglighetsinformation. <br />
+              Den är valfri.
+            </div>
           </li>
-          <li>
-            <strong>`autoFocus`</strong>: Om fältet ska få fokus vid
-            renderingen.
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>`required`:</div>
+            <div className={styles.itemText}>
+              Anger att fältet är obligatoriskt att fylla i innan formuläret kan
+              skickas. <br />
+              Den är valfri men rekommenderas.
+            </div>
           </li>
         </ul>
-        <p>
-          Komponenten använder även en <strong>ref</strong> via{' '}
-          <code>forwardRef</code> för att ge extern åtkomst till inputfältet.
-        </p>
 
-        <hr />
+        <hr className={styles.separator} />
 
-        <h4>Exempel på användning</h4>
-        <p>
-          För att använda <strong>Input-komponenten</strong> i din applikation
-          kan du skapa ett formulär som tar emot användarinput och validerar
-          det. Här är ett exempel:
-        </p>
-        <pre>
+        <h4 className={styles.subHeading}>Tillgänglig design i fokus</h4>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>
+              Unik ID för varje inputfält:
+            </div>
+            <div className={styles.itemText}>
+              Varje inputfält får ett unikt ID med hjälp av
+              <code className={styles.inlineCode}>uuidv4()</code>, vilket gör
+              att det kan kopplas till rätt etikett.
+            </div>
+          </li>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>
+              Validering och felmeddelanden:
+            </div>
+            <div className={styles.itemText}>
+              Om en inmatning inte är korrekt visas ett felmeddelande under
+              fältet, och fältet får en särskild CSS-klass för att indikera att
+              något är fel. Felmeddelandet är också tillgängligt för skärmläsare
+              genom
+              <code className={styles.inlineCode}>aria-live="assertive"</code>.
+            </div>
+          </li>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Skärmläsarstöd:</div>
+            <div className={styles.itemText}>
+              Varje inputfält är kopplat till ett felmeddelande via
+              <code className={styles.inlineCode}>aria-describedby</code> när
+              ett fel inträffar, vilket gör att skärmläsare kan läsa upp fältets
+              tillstånd och eventuella fel.
+            </div>
+          </li>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Live-feedback:</div>
+            <div className={styles.itemText}>
+              För att förbättra användarupplevelsen får användare live-feedback
+              om deras inmatning via
+              <code className={styles.inlineCode}>aria-live="polite"</code>,
+              vilket gör att skärmläsaren meddelar användaren om deras senaste
+              inmatning utan att avbryta annan information.
+            </div>
+          </li>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Fokus på fel:</div>
+            <div className={styles.itemText}>
+              Om ett fält inte är korrekt ifyllt, flyttas fokus till det första
+              fältet med ett fel när användaren försöker skicka formuläret, så
+              att de snabbt kan åtgärda felet.
+            </div>
+          </li>
+          <li className={styles.listItem}>
+            <div className={styles.itemHeader}>Tillgänglig felhantering:</div>
+            <div className={styles.itemText}>
+              Felmeddelanden är kopplade till de relevanta inputfälten och görs
+              tillgängliga för skärmläsare genom
+              <code className={styles.inlineCode}>aria-describedby</code>, så
+              att användaren kan höra varför inmatningen inte är giltig.
+            </div>
+          </li>
+        </ul>
+
+        <hr className={styles.separator} />
+
+        <h4 className={styles.subHeading}>Exempel på användning</h4>
+        <pre className={styles.codeBlock}>
           <code>
-            {`import React, { useState, useRef } from 'react';
-            import Input from './Input';
-            import { validateField, setupFields } from './Validation';
+            {`import React from 'react';
+import Input from './Input';
 
-            const AppInline = () => {
-              const [errorFields, setErrorFields] = useState(setupFields);
-              const [inputValue, setInputValue] = useState('');
-              const inputRefs = useRef({});
-              const delayRef = useRef(null);
-
-              const handleChange = (e, name) => {
-                const { value } = e.target;
-                const error = validateField(value, name);
-
-                setErrorFields((prevFields) => ({
-                  ...prevFields,
-                  [name]: {
-                    value,
-                    error,
-                  },
-                }));
-              };
-
-              const handleSubmit = (e) => {
-                e.preventDefault();
-                // Form validation logic here
-              };
-
-              return (
-                <form onSubmit={handleSubmit}>
-                  <Input
-                    type="text"
-                    label="Namn"
-                    name="name"
-                    value={errorFields.name.value}
-                    error={errorFields.name.error}
-                    onChange={handleChange}
-                    onBlur={(e) => handleBlur(e, 'name')}
-                    ref={(el) => (inputRefs.current.name = el)}
-                    required
-                  />
-                  {/* Additional inputs... */}
-                </form>
-              );
-            };`}
+const App = () => (
+    <form>
+      <Input
+      type="text"
+      label="Namn"
+      name="name"
+      required
+      />
+    </form>
+  );
+    
+    export default AppInline;`}
           </code>
         </pre>
-
-        <hr />
-
-        <h4>Tillgänglig design i fokus</h4>
-        <p>
-          För att göra denna komponent så tillgänglig som möjligt har vi
-          implementerat följande:
-        </p>
-        <ul>
-          <li>
-            <strong>Unik ID för varje inputfält:</strong> Varje inputfält får
-            ett unikt ID med hjälp av <code>uuidv4()</code>, vilket gör att det
-            kan kopplas till rätt etikett (<code>&lt;label&gt;</code>), och
-            skärmläsare kan korrekt läsa upp fältet.
-          </li>
-          <li>
-            <strong>Validering och felmeddelanden:</strong> Om en inmatning inte
-            är korrekt visas ett <strong>felmeddelande</strong> under fältet.
-            Med hjälp av <code>aria-live="assertive"</code> och{' '}
-            <code>aria-atomic="true"</code> säkerställs att meddelandet
-            omedelbart läses upp av skärmläsare utan att fördröja andra
-            interaktioner.
-          </li>
-          <li>
-            <strong>Tillgång till live-feedback:</strong> För att ge användaren
-            återkoppling om deras input har vi lagt till ett område för{' '}
-            <strong>live-feedback</strong> via <code>aria-live="polite"</code>,
-            så att skärmläsare kan meddela användaren om förändringar utan att
-            störa flödet.
-          </li>
-          <li>
-            <strong>Semantisk HTML:</strong> Vi använder semantiska HTML-element
-            som <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, och{' '}
-            <code>&lt;span&gt;</code> för att förbättra användarupplevelsen och
-            säkerställa att alla användare, inklusive de som använder
-            skärmläsare, får en tydlig och konsekvent upplevelse.
-          </li>
-          <li>
-            <strong>Ref och fokus:</strong> Ref-hantering gör det möjligt att
-            enkelt hantera fokus, vilket är särskilt användbart för att navigera
-            direkt till felaktiga fält efter formvalidering.
-          </li>
-        </ul>
-
-        <hr />
-
-        <h4>Sammanfattning</h4>
-        <p>
-          Med vår <strong>Input-komponent</strong> får du ett kraftfullt verktyg
-          för att skapa tillgängliga och användarvänliga formulär. Komponenten
-          hanterar både validering och användarfeedback, vilket gör det lättare
-          att bygga professionella och funktionella användargränssnitt.
-        </p>
       </main>
     </div>
   );
