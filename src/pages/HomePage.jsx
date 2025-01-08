@@ -11,9 +11,8 @@ const HomePage = () => {
         </p>
         <h2 className={styles.subHeading}>Utforska våra komponenter</h2>
         <p className={styles.paragraph}>
-          I menyn finns tre olika typer av komponenter att utforska:
-          <strong>Buttons</strong>, <strong>Inline Inputs</strong>, och
-          <strong>OnTop Inputs</strong>. <br />
+          I menyn finns tre olika typer av komponenter att utforska: 
+          Buttons, Inline Inputs och OnTop Inputs. <br />
           Varje sida erbjuder två huvudsakliga sektioner:
         </p>
         <ul className={styles.list}>

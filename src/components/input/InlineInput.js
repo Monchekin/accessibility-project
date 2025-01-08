@@ -112,7 +112,7 @@ const AppInline = () => {
         {/* Name Input */}
         <Input
           type='text'
-          label='Namn'
+          label='Namn '
           name='name'
           placeholder='Skriv ditt namn här'
           value={errorFields.name.value}
@@ -128,7 +128,7 @@ const AppInline = () => {
         {/* Age Input */}
         <Input
           type='number'
-          label='Ålder'
+          label='Ålder '
           name='age'
           placeholder='Skriv din ålder här'
           value={errorFields.age.value}
@@ -144,7 +144,7 @@ const AppInline = () => {
         {/* Email Input */}
         <Input
           type='email'
-          label='E-post'
+          label='E-post '
           name='email'
           placeholder='Skriv din email här'
           value={errorFields.email.value}
@@ -160,7 +160,7 @@ const AppInline = () => {
         {/* Phone Number Input */}
         <Input
           type='tel'
-          label='Telefonnummer'
+          label='Telefonnummer '
           name='phone'
           placeholder='Skriv ditt telefonnummer här'
           value={errorFields.phone.value}
@@ -176,7 +176,7 @@ const AppInline = () => {
         {/* Password Input */}
         <Input
           type='password'
-          label='Lösenord'
+          label='Lösenord '
           name='password'
           placeholder='Skriv ditt lösenord här'
           value={errorFields.password.value}
