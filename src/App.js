@@ -8,7 +8,6 @@ import OnTopInput from './pages/OnTopInputPage';
 import './App.css';
 
 const App = () => {
-  
   useEffect(() => {
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
@@ -23,10 +22,16 @@ const App = () => {
           <Navbar />
         </header>
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/buttons' element={<Buttons />} />
-          <Route path='/inlineInput' element={<InlineInput />} />
-          <Route path='/OnTopInputs' element={<OnTopInput />} />
+          <Route path='/accessibility-project/' element={<HomePage />} />
+          <Route path='/accessibility-project/buttons' element={<Buttons />} />
+          <Route
+            path='/accessibility-project/inlineInput'
+            element={<InlineInput />}
+          />
+          <Route
+            path='/accessibility-project/OnTopInputs'
+            element={<OnTopInput />}
+          />
         </Routes>
       </div>
     </>

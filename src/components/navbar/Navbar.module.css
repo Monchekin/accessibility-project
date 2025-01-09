@@ -1,7 +1,7 @@
 nav {
   background-color: #333;
   padding: 10px;
-  height: 2.5 rem;
+  height: 2.5rem;
 }
 
 ul {
@@ -18,7 +18,7 @@ li {
   align-items: center;
 }
 
-a {
+.link {
   color: white;
   text-decoration: none;
   padding: 10px;
@@ -26,18 +26,25 @@ a {
   align-items: center;
 }
 
-a:hover,
-a:focus {
+.link:hover,
+.link:focus {
   border-radius: 4px;
 }
 
-a:focus {
+.link:focus {
   box-shadow: 0 0 2px 2px #fff;
 }
 
-a[aria-current='page'] {
+.active {
   font-weight: bold;
-  box-shadow: 0 0 5px 3px #443ac9;
+  box-shadow: 0 0 5px 3px #8152e7;
+  color: #fff;
+  padding: 10px;
+}
+
+.active[aria-current='page'] {
+  font-weight: bold;
+  box-shadow: 0 0 5px 3px #ffffff;
 }
 
 .skipLink {
@@ -55,3 +62,8 @@ a[aria-current='page'] {
   top: 10px;
   z-index: 10;
 }
+
+/* .nav {
+  display: flex;
+  flex-direction: column; 
+} */

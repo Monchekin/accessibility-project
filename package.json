@@ -1,13 +1,15 @@
 {
-  "name": "accessibility-projekt",
+  "name": "accessibility-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://monchekin.github.io/accessibility-project/",
   "dependencies": {
     "cra-template": "1.2.0",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
     "uuid": "^11.0.3"
   },

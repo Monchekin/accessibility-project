@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <nav aria-label='Main navigation'>
@@ -8,42 +9,40 @@ const Navbar = () => (
 
     <ul>
       <li>
-        <a
-          href='/'
-          aria-current={window.location.pathname === '/' ? 'page' : undefined}
+        <NavLink
+          to='/'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
         >
           Home
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a
-          href='/buttons'
-          aria-current={
-            window.location.pathname === '/buttons' ? 'page' : undefined
-          }
+        <NavLink
+          to='/buttons'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
         >
           Buttons
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a
-          href='/inlineInput'
-          aria-current={
-            window.location.pathname === '/inlineInput' ? 'page' : undefined
-          }
+        <NavLink
+          to='/inlineInput'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
         >
           Inline Input
-        </a>
+        </NavLink>
       </li>
       <li>
-        <a
-          href='/OnTopInputs'
-          aria-current={
-            window.location.pathname === '/OnTopInputs' ? 'page' : undefined
-          }
+        <NavLink
+          to='/OnTopInputs'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
         >
           On Top Inputs
-        </a>
+        </NavLink>
       </li>
     </ul>
   </nav>
