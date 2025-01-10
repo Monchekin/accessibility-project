@@ -1,14 +1,18 @@
-import { v4 as uuidv4 } from 'uuid'; // Lägg till uuidv4 importen
+import { v4 as uuidv4 } from 'uuid'; // Import uuidv4 for generating unique IDs
 
+// Function to validate form fields based on their type
 export const validateField = (value, type) => {
   let error = '';
 
+  // Name field validation
   if (type === 'name') {
     error = value.trim() === '' ? 'Namnet är obligatoriskt' : '';
   }
+  // Age field validation
   if (type === 'age') {
     error = value < 18 ? 'Du måste vara minst 18 år gammal' : '';
   }
+  // Email field validation
   if (type === 'email') {
     const hasAtSymbol = /@/.test(value);
     const hasDot = /\./.test(value);
@@ -20,14 +24,16 @@ export const validateField = (value, type) => {
     } else if (!hasDot) {
       error = 'E-postadressen måste innehålla en punkt "."';
     } else {
-      error = ''; // Inga fel
+      error = ''; // No error
     }
   }
 
+  // Phone field validation
   if (type === 'phone') {
     const phonePattern = /^[+]?[0-9\s-]{8,15}$/;
     error = !phonePattern.test(value.trim()) ? 'Ogiltigt telefonnummer' : '';
   }
+  // Password field validation
   if (type === 'password') {
     const hasUpperCase = /[A-Z]/.test(value);
     const hasNumber = /[0-9]/.test(value);
@@ -46,8 +52,9 @@ export const validateField = (value, type) => {
   return error;
 };
 
+// Function to set up initial field values and IDs
 export const setupFields = () => ({
-  name: { value: '', error: '', id: `input-${uuidv4()}` },
+  name: { value: '', error: '', id: `input-${uuidv4()}` }, // Unique ID generated for each field
   age: { value: '', error: '', id: `input-${uuidv4()}` },
   email: { value: '', error: '', id: `input-${uuidv4()}` },
   phone: { value: '', error: '', id: `input-${uuidv4()}` },

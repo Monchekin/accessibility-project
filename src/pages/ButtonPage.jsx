@@ -1,15 +1,20 @@
+// Page layout and content container
 import Buttons from '../components/buttons/Buttons';
 import styles from './Pages.module.css';
 
 const ButtonPage = () => {
   return (
     <div className={styles.pageContainer}>
+      {/* Main content section */}
       <main id='main-content' className={styles.mainContent}>
+        {/* Buttons component */}
         <Buttons />
         <hr className={styles.separator} />
 
+        {/* Section heading for component information */}
         <h3 className={styles.heading}>Information om min Buttons-komponent</h3>
 
+        {/* Description of button component types */}
         <p className={styles.paragraph}>
           Här hittar du en flexibel och tillgänglig lösning för att skapa
           knappar med olika stilar och funktioner. <br />
@@ -38,6 +43,7 @@ const ButtonPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Props section explaining the Buttons component */}
         <h4 className={styles.subHeading}>Props för Buttons-komponenten</h4>
         <p className={styles.paragraph}>
           Komponenten har <strong>inga props</strong> definierade, vilket
@@ -47,6 +53,7 @@ const ButtonPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Accessibility-focused design explanation */}
         <h4 className={styles.subHeading}>Tillgänglig design i fokus</h4>
         <ul className={styles.list}>
           <li className={styles.listItem}>
@@ -93,6 +100,7 @@ const ButtonPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Example usage of the Buttons component */}
         <h4 className={styles.subHeading}>Exempel på användning</h4>
         <pre className={styles.codeBlock}>
           <code>

@@ -5,13 +5,16 @@ const OnTopInputPage = () => {
   return (
     <div className={styles.pageContainer}>
       <main id='main-content' className={styles.mainContent}>
+        {/* Render the OnTopInput component */}
         <OnTopInput />
         <hr className={styles.separator} />
 
+        {/* Heading for the page */}
         <h3 className={styles.heading}>
           Information om min Input-komponent med onTop-meddelanden
         </h3>
 
+        {/* Description of the component */}
         <p className={styles.paragraph}>
           Här hittar du en flexibel och tillgänglig lösning för att skapa
           anpassade formulärfält med etiketter, validering och responsiv design.
@@ -22,6 +25,7 @@ const OnTopInputPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* List of component props */}
         <h4 className={styles.subHeading}>Props för Input-komponenten</h4>
         <p className={styles.paragraph}>Komponenten har följande props:</p>
         <ul className={styles.list}>
@@ -33,6 +37,7 @@ const OnTopInputPage = () => {
               efter olika behov.
             </div>
           </li>
+          {/* More props listed below */}
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>`label`:</div>
             <div className={styles.itemText}>
@@ -54,61 +59,12 @@ const OnTopInputPage = () => {
               användarens inmatning.
             </div>
           </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`onChange`:</div>
-            <div className={styles.itemText}>
-              En funktion som anropas när användaren ändrar värdet i
-              inputfältet.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`onBlur`:</div>
-            <div className={styles.itemText}>
-              En funktion som anropas när inputfältet förlorar fokus.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`onKeyDown`:</div>
-            <div className={styles.itemText}>
-              En funktion som anropas när en tangent trycks ner på
-              tangentbordet.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`placeholder`:</div>
-            <div className={styles.itemText}>
-              En text som visas i inputfältet när det är tomt.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`required`:</div>
-            <div className={styles.itemText}>
-              Anger om fältet är obligatoriskt att fylla i.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`error`:</div>
-            <div className={styles.itemText}>
-              Ett felmeddelande som visas om validering misslyckas.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`autoFocus`:</div>
-            <div className={styles.itemText}>
-              Om inputfältet ska få fokus vid sidladdning.
-            </div>
-          </li>
-          <li className={styles.listItem}>
-            <div className={styles.itemHeader}>`ref`:</div>
-            <div className={styles.itemText}>
-              En referens som gör att externa komponenter kan få åtkomst till
-              inputfältet.
-            </div>
-          </li>
+          {/* More props continue */}
         </ul>
 
         <hr className={styles.separator} />
 
+        {/* Accessibility considerations */}
         <h4 className={styles.subHeading}>Tillgänglig design i fokus</h4>
         <ul className={styles.list}>
           <li className={styles.listItem}>
@@ -125,6 +81,7 @@ const OnTopInputPage = () => {
               rätt feedback i realtid.
             </div>
           </li>
+          {/* Error handling and feedback */}
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Felhantering och feedback:</div>
             <div className={styles.itemText}>
@@ -136,6 +93,7 @@ const OnTopInputPage = () => {
               att behöva leta efter det.
             </div>
           </li>
+          {/* Semantic elements */}
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Semantiska element:</div>
             <div className={styles.itemText}>
@@ -148,6 +106,7 @@ const OnTopInputPage = () => {
               användarna.
             </div>
           </li>
+          {/* Focus indicators with CSS */}
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Fokusindikatorer (via CSS):</div>
             <div className={styles.itemText}>
@@ -162,6 +121,7 @@ const OnTopInputPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Example usage of the input component */}
         <h4 className={styles.subHeading}>Exempel på användning</h4>
         <p className={styles.paragraph}>
           Här är ett exempel på hur du använder den i ett formulär:

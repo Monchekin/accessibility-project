@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import HomePage from './pages/HomePage';
 import Buttons from './pages/ButtonPage';
@@ -16,19 +16,19 @@ const App = () => {
   }, []);
 
   return (
-    <Router basename="/accessibility-project">
-      <div className="appContentWrap">
-        <header>
-          <Navbar />
-        </header>
+    <div className='appContentWrap'>
+      <header>
+        <Navbar />
+      </header>
+      <main id='main-content' tabIndex='-1'>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/buttons" element={<Buttons />} />
-          <Route path="/inlineInput" element={<InlineInput />} />
-          <Route path="/OnTopInputs" element={<OnTopInput />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/buttons' element={<Buttons />} />
+          <Route path='/inlineInput' element={<InlineInput />} />
+          <Route path='/OnTopInputs' element={<OnTopInput />} />
         </Routes>
-      </div>
-    </Router>
+      </main>
+    </div>
   );
 };
 

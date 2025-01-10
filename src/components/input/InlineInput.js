@@ -11,6 +11,7 @@ const AppInline = () => {
   const inputRefs = useRef({});
   const delayRef = useRef(null);
 
+  // Speaks a given message using the Web Speech API
   const speakMessage = (message) => {
     const utterance = new SpeechSynthesisUtterance(message);
     speechSynthesis.speak(utterance);
@@ -88,14 +89,14 @@ const AppInline = () => {
         inputRefs.current[firstErrorField]?.focus();
       }
       const errorMessage = 'Formuläret kan inte skickas, se felmeddelanden.';
-      setFormStatus(errorMessage);  
+      setFormStatus(errorMessage);
       return;
     }
 
     // If no errors, the form is successfully submitted
     const successMessage = 'Formuläret är skickat!';
-    setFormStatus(successMessage); 
-    speakMessage(successMessage); 
+    setFormStatus(successMessage);
+    speakMessage(successMessage);
   };
 
   // Handles combined change of input and stores the current input value
@@ -193,7 +194,8 @@ const AppInline = () => {
 
         <button type='submit'>Skicka</button>
       </form>
-      
+
+      {/* Displays form submission status */}
       {formStatus && (
         <div>
           <p>{formStatus}</p>

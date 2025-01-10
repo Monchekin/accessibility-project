@@ -1,17 +1,21 @@
+// InlineInputPage layout and content container
 import InlineInput from '../components/input/InlineInput';
 import styles from './Pages.module.css';
 
 const InlineInputPage = () => {
   return (
     <div className={styles.pageContainer}>
+      {/* Main content section */}
       <main id='main-content' className={styles.mainContent}>
         <InlineInput />
         <hr className={styles.separator} />
 
+        {/* Heading for the Input component */}
         <h3 className={styles.heading}>
           Information om min Input-komponent med inlines
         </h3>
 
+        {/* Description of the component */}
         <p className={styles.paragraph}>
           Den här Input-komponenten är en anpassningsbar och tillgänglig lösning
           för att hantera inmatning i formulär, inklusive etiketter, validering
@@ -24,6 +28,7 @@ const InlineInputPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Props for the Input component */}
         <h4 className={styles.subHeading}>Props för Input-komponenten</h4>
         <p className={styles.paragraph}>Komponenten har följande props:</p>
         <ul className={styles.list}>
@@ -114,6 +119,7 @@ const InlineInputPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Accessible design focus */}
         <h4 className={styles.subHeading}>Tillgänglig design i fokus</h4>
         <ul className={styles.list}>
           <li className={styles.listItem}>
@@ -178,6 +184,7 @@ const InlineInputPage = () => {
 
         <hr className={styles.separator} />
 
+        {/* Example usage of the component */}
         <h4 className={styles.subHeading}>Exempel på användning</h4>
         <pre className={styles.codeBlock}>
           <code>

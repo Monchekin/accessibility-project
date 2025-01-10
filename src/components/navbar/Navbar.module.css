@@ -1,9 +1,11 @@
+/* Style for the navigation bar */
 nav {
   background-color: #333;
   padding: 10px;
   height: 2.5rem;
 }
 
+/* List styles for navigation links */
 ul {
   list-style-type: none;
   margin: 0;
@@ -13,11 +15,13 @@ ul {
   align-items: center;
 }
 
+/* List item style for navigation links */
 li {
   display: inline-flex;
   align-items: center;
 }
 
+/* Style for the links */
 .link {
   color: white;
   text-decoration: none;
@@ -26,15 +30,18 @@ li {
   align-items: center;
 }
 
+/* Hover and focus effects for links */
 .link:hover,
 .link:focus {
   border-radius: 4px;
 }
 
+/* Focused link styling with box shadow */
 .link:focus {
   box-shadow: 0 0 2px 2px #fff;
 }
 
+/* Active link style */
 .active {
   font-weight: bold;
   box-shadow: 0 0 5px 3px #8152e7;
@@ -42,11 +49,13 @@ li {
   padding: 10px;
 }
 
+/* Active link with aria-current attribute */
 .active[aria-current='page'] {
   font-weight: bold;
   box-shadow: 0 0 5px 3px #ffffff;
 }
 
+/* Skip link for accessibility */
 .skipLink {
   position: absolute;
   top: -40px;
@@ -58,12 +67,8 @@ li {
   border-radius: 4px;
 }
 
+/* Focus effect for skip link */
 .skipLink:focus {
   top: 10px;
   z-index: 10;
 }
-
-/* .nav {
-  display: flex;
-  flex-direction: column; 
-} */

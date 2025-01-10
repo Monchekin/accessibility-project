@@ -6,6 +6,7 @@ import styles from './Button.module.css';
 const Buttons = () => {
   const [message, setMessage] = useState('');
 
+  // Handle button click logic based on button type
   const handleClick = (buttonType) => {
     if (buttonType === 'text') {
       setMessage('Du klickade på knappen med text');
@@ -19,7 +20,8 @@ const Buttons = () => {
   return (
     <>
       <h2>Tre tillgängliga knappar</h2>
-      {/* text-button */}
+
+      {/* Button with only text */}
       <button
         className={styles['button']}
         type='button'
@@ -28,7 +30,7 @@ const Buttons = () => {
         Login
       </button>
 
-      {/* icon-button */}
+      {/* Button with only an icon */}
       <button
         className={styles['button']}
         type='button'
@@ -38,7 +40,7 @@ const Buttons = () => {
         <SlLogin aria-hidden='true' focusable='false' />
       </button>
 
-      {/* text & icon button */}
+      {/* Button with both text and an icon */}
       <button
         className={styles['button']}
         type='button'
@@ -48,7 +50,7 @@ const Buttons = () => {
         <SlLogin aria-hidden='true' focusable='false' />
       </button>
 
-      {/* The screenreader will read the message dynamically when it updates */}
+      {/* Dynamic message read by screen readers */}
       <div aria-live='polite' aria-atomic='true'>
         {message && <p>{message}</p>}
       </div>
@@ -57,4 +59,3 @@ const Buttons = () => {
 };
 
 export default Buttons;
-

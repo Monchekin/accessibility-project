@@ -1,3 +1,4 @@
+/* Main container styling */
 .mainContent {
   max-width: 70%;
   margin: 0 auto;
@@ -9,6 +10,7 @@
   color: #333;
 }
 
+/* Heading styling */
 .heading {
   color: #2c3e50;
   margin-top: 1em;
@@ -17,17 +19,20 @@
   padding-bottom: 0.3em;
 }
 
+/* Subheading styling */
 .subHeading {
   margin-top: 1.2em;
   font-size: 1.2rem;
   color: #34495e;
 }
 
+/* Paragraph styling */
 .paragraph {
   line-height: 1.6;
   margin-bottom: 1em;
 }
 
+/* List container */
 .list {
   list-style: none;
   padding: 0;
@@ -37,6 +42,7 @@
   gap: 1em;
 }
 
+/* List item styling */
 .listItem {
   display: flex;
   flex-direction: column;
@@ -51,6 +57,7 @@
   text-align: left;
 }
 
+/* Sublist styling */
 .subList {
   display: flex;
   align-items: flex-start;
@@ -60,18 +67,21 @@
   margin-left: 5%;
 }
 
+/* Header for list items */
 .itemHeader {
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
 
+/* Text content inside list items */
 .itemText {
   font-size: 1em;
   color: #333;
   line-height: 1.5;
 }
 
+/* Styling for inline code snippets */
 .inlineCode {
   background-color: #f1f1f1;
   padding: 2px 4px;
@@ -79,6 +89,7 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+/* Styling for code blocks */
 .codeBlock {
   background-color: #2d2d2d;
   color: #f8f8f2;
@@ -88,16 +99,9 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.inlineCode {
-  background-color: #f1f1f1;
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
+/* Horizontal separator line */
 .separator {
   border: none;
   border-top: 1px solid #c7c7c7;
   margin: 2em 0;
 }
-

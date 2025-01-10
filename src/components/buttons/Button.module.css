@@ -1,42 +1,46 @@
+/* Button styles with flexbox alignment and transition */
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    background-color: #587dc9;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 150px;
-    height: 40px;
-  }
-  
-  .button:hover {
-    background-color: #45a049;
-  }
-  
-  .button:focus {
-    background-color: #4aae4f;
-    color: #000000;
-  }
-  
-  .paragraph {
-    padding-right: 5px;
-  }
-  
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #587dc9;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px;
+  height: 40px;
+}
+
+/* Hover effect for the button */
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Focus styles for the button */
+.button:focus {
+  background-color: #4aae4f;
+  color: #000000;
+}
+
+/* Paragraph padding adjustment */
+.paragraph {
+  padding-right: 5px;
+}
+
+/* Visually hidden content for accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}

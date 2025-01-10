@@ -1,16 +1,19 @@
 /************ input style ************/
 .input-container {
+  /* Style for input container */
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 }
 
 label {
+  /* Style for labels */
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
 input {
+  /* Style for input fields */
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -18,12 +21,14 @@ input {
 }
 
 fieldset {
+  /* Style for fieldset elements */
   border: 2px solid #ccc;
   padding: 10px;
   margin-bottom: 1rem;
 }
 
 .error-icon {
+  /* Style for error icon next to inputs */
   font-size: 1.5rem;
   vertical-align: middle;
   margin-left: 5px;
@@ -33,11 +38,12 @@ fieldset {
 }
 
 .inputError {
+  /* Style for input fields with errors */
   border: 2px solid red;
   background-color: #f8d7da;
 }
 
-/*! FUNKAR INTE FÖRTILLFÄLET - LIGGER I APP.CSS ISTÄLLET */
+/*! DOES NOT WORK AT THE MOMENT - LOCATED IN APP.CSS INSTEAD */
 /* .error-messages {
   margin-bottom: 20px;
   padding: 10px;
