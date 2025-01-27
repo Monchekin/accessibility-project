@@ -54,6 +54,17 @@ const Navbar = () => (
           On Top Inputs
         </NavLink>
       </li>
+
+      {/* Tables link */}
+      <li>
+        <NavLink
+          to='/Tables'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
+        >
+          Tables
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );

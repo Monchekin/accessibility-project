@@ -10,6 +10,17 @@
   color: #333;
 }
 
+.mainContent_tables {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 40px 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
 /* Heading styling */
 .heading {
   color: #2c3e50;

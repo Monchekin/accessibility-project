@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import Buttons from './pages/ButtonPage';
 import InlineInput from './pages/InlineInputPage';
 import OnTopInput from './pages/OnTopInputPage';
+import Tables from './pages/TablesPages.jsx';
 import './App.css';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/buttons' element={<Buttons />} />
           <Route path='/inlineInput' element={<InlineInput />} />
           <Route path='/OnTopInputs' element={<OnTopInput />} />
+          <Route path='/Tables' element={<Tables />} />
         </Routes>
       </main>
     </div>
