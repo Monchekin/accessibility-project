@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Input from './Input';
+import styles from './Input.module.css';
+
 import '../../App.css';
 
 import { validateField, setupFields } from './Validation';
@@ -117,7 +119,7 @@ const AppOnTop = () => {
   };
 
   return (
-    <div>
+    <div className={styles.input_page}>
       <form onSubmit={handleSubmit} onMouseDown={handleMouseDown} ref={formRef}>
         <h2>Inputs med OnTop-meddelanden</h2>
         {showErrors && (

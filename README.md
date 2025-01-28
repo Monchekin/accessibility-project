@@ -41,6 +41,15 @@ Formuläret använder `Input`-komponenten och validerar varje fält dynamiskt n�
 - **Inline-validering**: Felmeddelanden visas så snart användaren skriver eller lämnar ett fält.
 - **Validering ovanför**: Felmeddelanden visas högst upp, med länkar för att fokusera på specifika inmatningsfält som har fel.
 
+### Tables-komponenten
+
+`Tables`-komponenten är en responsiv och semantiskt korrekt implementation av tabeller. Den är utformad för att vara fullt tillgänglig för användare som använder skärmläsare eller tangentbord. Tabellen inkluderar:
+
+1. **Veckans matmeny**: Visar olika maträtter för lunch och middag under veckan.
+2. **Veckans schema**: Visar aktiviteter med tid och plats under veckan.
+3. **Veckans temperaturer**: Presenterar temperaturdata för varje dag och del av dagen.
+
+
 ### Setup
 
 För att köra projektet lokalt:
@@ -72,7 +81,7 @@ Din applikation bör nu vara igång på `http://localhost:3000`.
 
 ## Utveckling
 
-För att börja arbeta på knappar och inmatningskomponenter kan du ändra `Buttons.js` och `Input.js`.  
+För att börja arbeta på knappar, inmatningskomponenter och tabeller kan du ändra `Buttons.js`, `Input.js` och `Tables.js`.Alla ändringar du gör i formulär eller tabeller kan testas i respektive komponent eller huvudfil.
 Alla ändringar du gör i formulärfunktionaliteten kan uppdateras i `AppInline.js` eller `AppOnTop.js`.
 
 ## Tillgänglighet
@@ -81,11 +90,10 @@ Detta projekt är byggt med tillgänglighet i åtanke:
 
 - Alla inmatningsfält har korrekt etiketter och felmeddelanden.
 - Dynamiska uppdateringar läses av skärmläsare.
+- Tabellerna använder semantiska element och beskrivande rubriker.
 - Felmeddelanden hanteras med `aria-live`-attribut för att säkerställa att hjälpmedelstekniker kan meddela ändringar i realtid.
 
 ---
-
-Happy coding! 🎉
 
 ```
 

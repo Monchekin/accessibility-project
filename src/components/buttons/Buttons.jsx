@@ -18,7 +18,8 @@ const Buttons = () => {
   };
 
   return (
-    <>
+    
+    <div className={styles.btn_page}>
       <h2>Tre tillgängliga knappar</h2>
 
       {/* Button with only text */}
@@ -54,7 +55,7 @@ const Buttons = () => {
       <div aria-live='polite' aria-atomic='true'>
         {message && <p>{message}</p>}
       </div>
-    </>
+    </div>
   );
 };
 

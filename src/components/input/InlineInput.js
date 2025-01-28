@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Input from './Input';
 import '../../App.css';
+import styles from './Input.module.css';
+
 import { validateField, setupFields } from './Validation';
 
 const AppInline = () => {
@@ -106,7 +108,7 @@ const AppInline = () => {
   };
 
   return (
-    <div>
+    <div className={styles.input_page}>
       <form onSubmit={handleSubmit}>
         <h2>Inputs med inline-meddelanden</h2>
 

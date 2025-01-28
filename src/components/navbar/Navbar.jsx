@@ -4,12 +4,9 @@ import { NavLink } from 'react-router-dom';
 // Navbar component for rendering main navigation with accessible skip link and active link styling
 const Navbar = () => (
   <nav aria-label='Main navigation'>
-    {' '}
-    {/* Accessible label for navigation */}
-    {/* Skip link to main content */}
-    <a href='#main-content' className={styles.skipLink} tabIndex='0'>
+    {/* <a href='#main-content' className={styles.skipLink} tabIndex='0'>
       Skip to content
-    </a>
+    </a> */}
     <ul>
       {/* Home link */}
       <li>

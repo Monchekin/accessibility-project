@@ -1,5 +1,6 @@
 // HomePage layout and content container
 import styles from './Pages.module.css';
+import Tables from '../components/tables/Tables';
 
 const HomePage = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage = () => {
         <h2 className={styles.subHeading}>Utforska våra komponenter</h2>
         <p className={styles.paragraph}>
           I menyn finns tre olika typer av komponenter att utforska: 
-          Buttons, Inline Inputs och OnTop Inputs. <br />
+          Buttons, Inline Inputs, OnTop Inputs och Tables. <br />
           Varje sida erbjuder två huvudsakliga sektioner:
         </p>
 

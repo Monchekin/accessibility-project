@@ -8,6 +8,7 @@ const ButtonPage = () => {
       {/* Main content section */}
       <main id='main-content' className={styles.mainContent}>
         {/* Buttons component */}
+
         <Buttons />
         <hr className={styles.separator} />
 
@@ -20,20 +21,31 @@ const ButtonPage = () => {
           knappar med olika stilar och funktioner. <br />
           Buttons-komponenten finns tre exempel på olika typer av login-knappar:
         </p>
+
         <ol className={styles.list}>
           <li className={styles.listItem}>
-            <strong>Textknapp</strong> – En enkel knapp med endast text, perfekt
-            för tydliga och lättförståeliga åtgärder.
+            <div className={styles.itemHeader}>Textknapp</div>
+            <p>
+              En enkel knapp med endast text, perfekt för tydliga och
+              lättförståeliga åtgärder.
+            </p>
           </li>
           <li className={styles.listItem}>
-            <strong>Ikonknapp</strong> – En knapp med endast en ikon, idealisk
-            för minimalistiska designlösningar.
+            <div className={styles.itemHeader}>Ikonknapp</div>
+            <p>
+              En knapp med endast en ikon, idealisk för minimalistiska
+              designlösningar.
+            </p>
           </li>
           <li className={styles.listItem}>
-            <strong>Text- och ikonknapp</strong> – En kombination av text och
-            ikon, perfekt för att balansera tydlighet och design.
+            <div className={styles.itemHeader}>Text- och ikonknapp</div>
+            <p>
+              En kombination av text och ikon, perfekt för att balansera
+              tydlighet och design.
+            </p>
           </li>
         </ol>
+
         <p className={styles.paragraph}>
           Varje knapp är responsiv och fungerar med både tangentbord och
           skärmläsare, så att alla användare kan använda dem utan problem. När
