@@ -1,0 +1,45 @@
+.accordion {
+  width: 500px;
+  justify-content: center;
+}
+
+.item {
+  background-color: #f0ebe1;
+  margin-bottom: 5px;
+  padding: 20px 20px;
+  margin-top: 10px;
+}
+
+.item:hover {
+  background-color: #ecdfc5;
+  cursor: pointer;
+  border: 3px solid #333;
+}
+
+.accordionButton {
+  all: unset;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accordionButton:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 20px;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

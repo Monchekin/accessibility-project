@@ -6,6 +6,7 @@ import Buttons from './pages/ButtonPage';
 import InlineInput from './pages/InlineInputPage';
 import OnTopInput from './pages/OnTopInputPage';
 import Tables from './pages/TablesPages.jsx';
+import Accordion from './pages/AccordionPage.jsx';
 import './App.css';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/inlineInput' element={<InlineInput />} />
           <Route path='/OnTopInputs' element={<OnTopInput />} />
           <Route path='/Tables' element={<Tables />} />
+          <Route path='/Accordion' element={<Accordion />} />
         </Routes>
       </main>
     </div>

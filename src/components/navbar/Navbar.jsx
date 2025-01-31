@@ -62,6 +62,17 @@ const Navbar = () => (
           Tables
         </NavLink>
       </li>
+
+      {/* Accordion link */}
+      <li>
+        <NavLink
+          to='/Accordion'
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
+        >
+          Accordion
+        </NavLink>
+      </li>
     </ul>
   </nav>
 );

@@ -49,7 +49,6 @@ Formuläret använder `Input`-komponenten och validerar varje fält dynamiskt n�
 2. **Veckans schema**: Visar aktiviteter med tid och plats under veckan.
 3. **Veckans temperaturer**: Presenterar temperaturdata för varje dag och del av dagen.
 
-
 ### Setup
 
 För att köra projektet lokalt:

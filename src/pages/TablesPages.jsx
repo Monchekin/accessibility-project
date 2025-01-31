@@ -22,8 +22,8 @@ const TablesPage = () => {
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Struktur</div>
             <p>
-              Tabellerna använder semantiska HTML-element som{' '}
-              <code className={styles.inlineCode}>&lt;thead&gt;</code> och{' '}
+              Tabellerna använder semantiska HTML-element som
+              <code className={styles.inlineCode}>&lt;thead&gt;</code> och
               <code className={styles.inlineCode}>&lt;tbody&gt;</code>
               för tydlig struktur och bättre kompatibilitet med skärmläsare.
             </p>
@@ -31,7 +31,7 @@ const TablesPage = () => {
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Hierarki</div>
             <p>
-              Både <code className={styles.inlineCode}>scope="col"</code> och{' '}
+              Både <code className={styles.inlineCode}>scope="col"</code> och
               <code className={styles.inlineCode}>scope="row"</code> används för
               att definiera relationen mellan rader och kolumner, vilket
               underlättar navigering för hjälpmedel.
@@ -70,9 +70,9 @@ const TablesPage = () => {
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Semantiska element:</div>
             <div className={styles.itemText}>
-              Korrekt användning av HTML-element såsom{' '}
+              Korrekt användning av HTML-element såsom
               <code className={styles.inlineCode}>&lt;th&gt;</code>,
-              <code className={styles.inlineCode}>&lt;td&gt;</code> och{' '}
+              <code className={styles.inlineCode}>&lt;td&gt;</code> och
               <code className={styles.inlineCode}>&lt;caption&gt;</code> ger en
               tydlig struktur och förbättrar tillgängligheten för hjälpmedel.
             </div>
@@ -80,7 +80,7 @@ const TablesPage = () => {
           <li className={styles.listItem}>
             <div className={styles.itemHeader}>Skärmläsaroptimering:</div>
             <div className={styles.itemText}>
-              Tabellerna innehåller beskrivande{' '}
+              Tabellerna innehåller beskrivande
               <code className={styles.inlineCode}>caption</code>-taggar som ger
               kontext till skärmläsaranvändare och gör det enklare att förstå
               tabellens syfte.
